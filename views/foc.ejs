@@ -1,0 +1,16 @@
+<%-  include('./partials/header.ejs') %>
+
+
+<br><bR>
+<div style="text-align: center;"><form action="/fac" method="POST">
+    <input type="hidden" value="<%=a%>" name = "faculty">
+    <button type ="submit" style="width: 100px; height:100px" > Department</button>
+</form>
+<br><br>
+<form action="/course" method="POST">
+    <input type="hidden" value="<%=a%>" name = "course">
+    <button type ="submit" style="width: 100px; height:100px"  > Courses Offered</button>
+</form></div>
+
+<br><br><br>
+<%-  include('./partials/footer.ejs') %>

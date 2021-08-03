@@ -1,0 +1,27 @@
+<%-  include('./partials/header.ejs') %>
+
+<br><br>
+<div style="text-align: center;"><h4><u>List of departments under <%= a %></u></h4>
+<bR><br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% depts.forEach((dept, index) => { %>
+                <tr>
+                    <th scope="row"><%= dept.Dept_id %></th>
+                    
+                    <td><%= dept.Dept_name %></td>
+                    <td><%= dept.Contact %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    
+<bR><br>
+<%-  include('./partials/footer.ejs') %>

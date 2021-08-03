@@ -1,0 +1,55 @@
+<%-  include('./partials/header.ejs') %>
+
+
+<div style="text-align: center;"><h4><u>List of departments under <%= a %></u></h4>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% depts.forEach((dept, index) => { %>
+                <tr>
+                    <th scope="row"><%= dept.Dept_id %></th>
+                    
+                    <td><%= dept.Dept_name %></td>
+                    <td><%= dept.Contact %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    
+    <br>
+    <form action="/fac_o_course" method="POST">
+    <label>Enter Department ID to know more</label>
+    <input type="text" name="dept_to_fac_o_course">
+    <button type="submit">Find</button>
+    </form>
+    <br>
+    <form action="/dept_add" method="POST">
+        <h4>Add a new Department</h4><br>
+        <label>Enter Department Id</label>
+        <input type="text" name="dept_id_to_add" required><br><br>
+        <label>Enter Department name</label>
+        <input type="text" name="dept_name_to_add" required><br><br>
+        <label>Enter Department Contact Details</label>
+        <input type="text" name="dept_con_to_add" required><br><br>
+        <label>College ID</label>
+        <input type="text" name="clg_id_to_add" value="<%=a%>" required><br><br>
+        <button type="submit">Add</button>
+    </form><br><br>
+    
+    <form action="/dept_del" method="POST">
+    <label>Enter Department ID to remove</label>
+    <input type="text" name="dept_id_to_del" required>>
+    <button type="submit">Delete</button>
+    </form>
+    
+    <br></div>
+
+
+<%-  include('./partials/footer.ejs') %>

@@ -1,0 +1,19 @@
+<%-  include('./partials/header.ejs') %>
+<br><br>
+<div style="text-align: center;">
+    <h3>Submit your project details here</h3><br>
+    <form action="/prosub" method="POST">
+    <label>Enter Student Id</label>
+    <input type="text" name="stud_id" required><br><br>
+    <label>Enter Faculty Id</label>
+    <input type="text" name="fac_name" required><br><br>
+    <label>Enter Project Name</label>
+    <input type="text" name="pro_name" required><br><br>
+    <label >Enter Description of Project</label>
+    <input style="height: 100px;" type="text" required><br><br>
+    <button type="submit">Submit</button>
+    </form>
+    <br><br>
+</div>
+
+<%-  include('./partials/footer.ejs') %>

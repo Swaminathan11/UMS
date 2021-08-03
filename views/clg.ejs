@@ -1,0 +1,38 @@
+
+<%-  include('./partials/header.ejs') %>
+
+<br><br>
+<div style="text-align:center"><u><h2>Colleges under University</h2></u>
+<br>
+    <form action="/clg_second" method="POST">
+    <button type="submit"> Click here to get the details of the all the colleges.</button>
+    </form>
+
+    <form action="/clg_add" method="POST"><bR><br>
+        <h4>Add a new College</h4><br>
+        <label>Enter College name</label>
+        <input type="text" name="Clg_name_to_add" required><br><br>
+        <label>Enter College Address</label>
+        <input type="text" name="Clg_add_to_add" required><br><br>
+        <button type="submit">Add</button>
+    </form>
+    
+        <h4>View a College</h4>
+        <form action = "/clg_info" method="POST">
+        <label>Enter College Id to search: </label>
+        <input type="text" name="Clg_id" required>
+        <button type="submit">Search</button>
+        </form>
+
+        <h4>Delete a College</h4>
+        <form action = "/clg_del" method="POST">
+        <label>Enter College Id to delete: </label>
+        <input type="text" name="Clg_id" required>
+        <button type="submit">Delete</button>
+        </form>
+</div>
+<br><br>
+<%-  include('./partials/footer.ejs') %>
+
+
+    

@@ -1,0 +1,54 @@
+<%-  include('./partials/header.ejs') %>
+
+<div style="text-align: center;">
+    
+<h4><u>List of faculties under <%= h %></u></h4>
+<br>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Education</th>
+            <th scope="col">Post</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% depts.forEach((dept, index) => { %>
+            <tr>
+                <th scope="row"><%= dept.faculty_id %></th>
+                
+                <td><%= dept.faculty_name %></td>
+                <td><%= dept.education %></td>
+                <td><%= dept.Post %></td>
+            </tr>
+        <% }) %>
+    </tbody>
+</table>
+<br>
+<form action="/fac_add" method="POST">
+    <h4>Add a new Faculty to this Department</h4><br>
+    <label>Enter Faculty Id</label>
+    <input type="text" name="fac_id_to_add" required><br><br>
+    <label>Enter Faculty name</label>
+    <input type="text" name="fac_name_to_add" required><br><br>
+    <label>Enter Faculty Education Details</label>
+    <input type="text" name="fac_edu_to_add" required><br><br>
+    <label>Enter Position name</label>
+    <input type="text" name="fac_pos_to_add" required><br><br>
+    <label>Department Id</label>
+    <input type="text" name="dept_of_fac" value="<%=h%>" required>
+    <button type="submit">Add</button>
+</form><br><br>
+
+
+<form action="/fac_del" method="POST">
+    <h4>Delete a Faculty from this Department</h4><br>
+    <label>Enter Faculty ID to remove</label>
+    <input type="text" name="fac_id_to_del" required>>
+    <button type="submit">Delete</button>
+    </form>
+<br><br>
+</div>
+<BR><BR>
+<%-  include('./partials/footer.ejs') %>

@@ -1,0 +1,31 @@
+<%-  include('./partials/header.ejs') %>
+<bR><br>
+    <div style="text-align: center;"><h1>Student info</h1><br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">DOB</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">College</th>
+                    <th scope="col">Course</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% studs.forEach((stud, index) => { %>
+                    <tr>
+                        <th scope="row"><%= stud.student_id %></th>
+                        
+                        <td><%= stud.student_name %></td>
+                        <td><%= stud.DOB %></td>
+                        <td><%= stud.address %></td>
+                        <td><%= stud.Clg_id %></td>
+                        <td><%= stud.course_id %></td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table><br><br></div>
+
+<br><br>
+<%-  include('./partials/footer.ejs') %>

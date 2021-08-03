@@ -1,0 +1,49 @@
+<%-  include('./partials/header.ejs') %>
+<br>
+<div style="text-align: center;"><h4>List of departments under <%= a %></h4>
+    <br>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Faculty Alloted</th>
+                <th scope="col">Credits</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% subjects.forEach((subject, index) => { %>
+                <tr>
+                    <th scope="row"><%= subject.subject_id %></th>
+                    
+                    <td><%= subject.subject_name %></td>
+                    <td><%= subject.faculty_id %></td>
+                    <td><%= subject.Credits %></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+    <bR><br>
+    <form action="/subjects_to_add" method="POST">
+    <label>Enter Course Id</label>
+    <input type="text" name="cour_id" value="<%=a%>" required>
+    <br><br>
+    <label>Enter Subject Id </label>
+    <input type="text" name="sub_id" required>
+    <br><br>
+    <label>Enter Subject Name </label>
+    <input type="text" name="sub_name" required>
+    <br><br>
+    <label>Enter Alloted Faculty Id </label>
+    <input type="text" name="fac_al_id" required>
+    <br><br>
+    <button type="submit"> Click to add new subject</button>
+    </form>
+    <br><br>
+    <form action="/sub_del" method="POST">
+    <label>ENter Subject_id to delete</label>
+    <input type="text" name="sub_id_to_del">
+    </form><br>
+    </div>
+
+<%-  include('./partials/footer.ejs') %>

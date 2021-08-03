@@ -1,0 +1,17 @@
+<%-  include('./partials/header.ejs') %>
+<br><br>
+<u><h4 style="text-align: center;">College Details </h4></u>
+<div style="margin-left: 400px;">
+    <br>
+    <ul>
+        <li>College ID : <b><%=clgs[0].Clg_id%></b> </li>
+        <li>College Name : <b><%=clgs[0].Clg_Name%></b></li>
+        <li>College Address : <b><%=clgs[0].Clg_Address%></b> </li>
+    </ul></div>
+<br>
+<form action="/fclgtodept" method="POST">
+    <input type="hidden" value="<%=clgs[0].Clg_id%>" name="clg_id" >
+    <button type="submit">Click here to dive into college</button>
+</form>
+<br><br>
+<%-  include('./partials/footer.ejs') %>

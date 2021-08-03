@@ -1,0 +1,20 @@
+<%-  include('./partials/header.ejs') %>
+<bR><bR>
+
+<h3 style="text-align: center;">Student Corner</h3><bR>
+    
+    <div style="text-align: center;"> 
+        <form method="POST" action="/stud_to_view">
+            <label>Enter Student Register No. to get details</label><bR><bR>
+                <input type="text" name="stud_id_to_view" required><br><bR>
+                <button type="submit">View</button><br><br>
+
+    </form>
+</div>
+   
+<h3><a href="/pro" style="margin-left: 630px;">Submit your project</a></h3><br>
+
+
+
+<bR><br><br>
+    <%-  include('./partials/footer.ejs') %>

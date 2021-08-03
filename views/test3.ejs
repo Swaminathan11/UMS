@@ -1,0 +1,15 @@
+<%-  include('./partials/header.ejs') %>
+<bR><br>
+<h2 style="text-align: center;"><u>Details of Students whose Project marks is more than <%=a%></u></h2>
+<bR><bR><hr><br>
+<div style="text-align: center;"><% stud.forEach((clg, index) => { %>
+
+    <h5>Student Regno : <%=clg.student_id%></h5>
+    <h5>Student Name : <%=clg.student_name%></h5>
+    <h5>Project Name : <%=clg.name%></h5>
+    <h5>Marks Obtained : <%=clg.pro%></h5>
+
+<bR><bR><hr><br>
+    <% }) %></div>
+    <BR><BR>
+        <%-  include('./partials/footer.ejs') %>

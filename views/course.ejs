@@ -1,0 +1,49 @@
+<%-  include('./partials/header.ejs') %>  
+  
+<div style="text-align: center;"><h4>List of courses under <%= h %></h4>
+    <br>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% courses.forEach((course, index) => { %>
+                    <tr>
+                        <td><%= course.course_id %></td>
+                        <td><%= course.course_name %></td>
+    
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <br>
+        <form action="/course_add" method="POST">
+            <h4>Add a new Course </h4>
+            <label>Enter Course Id</label>
+            <input type="text" name="course_id_to_add" required><br><br>
+            <label>Enter Course name</label>
+            <input type="text" name="course_name_to_add" required><br><br>
+            <label>Department Id</label>
+            <input type="text" name="dept_of_course" value="<%=h%>" required>
+            <button type="submit">Add</button>
+        </form><br><br>
+        
+        <form action="/sub_view" method="POST">
+            <label>Enter Course ID to see subjects</label>
+            <input type="text" name="course_id_to_view" required>>
+            <button type="submit">View</button>
+            </form>
+        <br>
+        
+        <form action="/course_del" method="POST">
+            <label>Enter Course ID to remove</label>
+            <input type="text" name="course_id_to_del" required>>
+            <button type="submit">Delete</button>
+            </form>
+        
+            <br></div> 
+
+        <%-  include('./partials/footer.ejs') %>  

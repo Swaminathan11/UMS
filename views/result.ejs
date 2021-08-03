@@ -1,0 +1,18 @@
+<%-  include('./partials/header.ejs') %>
+
+<div style="text-align: center;"><h4><u>Add a result</u></h4><br>
+    <form action="/results" method="POST">
+        <label>Student Id</label>
+            <input type="text" value="<%=a%>" name="student_id_res" required><br><bR>
+        <% subs.forEach((sub, index) => { %>
+    
+            <label><%=sub.subject_name%></label>
+            <input id= "marks1" type="text" name="marks" required> <br><bR>
+            <% }) %><br>
+            <label>Project</label>
+            <input type="text" name="promarks" required> <bR><br>
+            <button type="submit">Submit</button>
+    </form></div>
+
+
+<%-  include('./partials/footer.ejs') %>

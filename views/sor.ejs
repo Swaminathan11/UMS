@@ -1,0 +1,15 @@
+<%-  include('./partials/header.ejs') %>
+<br><bR>
+<div style="text-align: center;">
+    <form action="/stud" method="POST">
+        <button type="submit" style="width: 100px;height:100px;">Student info</button>
+        </form><br><br>
+        <h4><u>Update results</u></h4><bR>
+        <form action="/res" method="POST">
+            <label>Enter Student Id whose result is to be updated: </label>
+        <input type="text" name="stud_res_up" required>
+        <button type="submit">Find</button>
+        </form>
+    <br><br>
+</div>
+    <%-  include('./partials/footer.ejs') %>

@@ -1,0 +1,20 @@
+<%-  include('./partials/header.ejs') %>
+
+<p>No Departments Under Specified College</p>
+
+
+<form action="/dept_add" method="POST">
+    <h4>Add a new Department</h4>
+    <label>Enter Department Id</label>
+    <input type="text" name="dept_id_to_add" required><br><br>
+    <label>Enter Department name</label>
+    <input type="text" name="dept_name_to_add" required><br><br>
+    <label>Enter Department Contact Details</label>
+    <input type="text" name="dept_con_to_add" required><br><br>
+    <label>College ID</label>
+    <input type="text" name="clg_id_to_add" value="<%=a%>" required><br><br>
+    <button type="submit">Add</button>
+</form><br><br>
+
+<br><br>
+<%-  include('./partials/footer.ejs') %>
